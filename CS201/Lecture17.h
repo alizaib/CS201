@@ -1,2 +1,4 @@
 #pragma once
-void Test17();
+void EntryPoint17();
+
+void PrintAllAsciiCharacters();

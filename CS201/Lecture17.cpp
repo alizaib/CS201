@@ -2,7 +2,11 @@
 #include <iostream>
 using namespace std;
 
-void Test17()
-{
-	cout << "This is Test17" << endl;
+void EntryPoint17(){
+	PrintAllAsciiCharacters();
+}
+
+void PrintAllAsciiCharacters() {
+	for (int i = 0; i < 256; i++)
+		cout << i << "\t" << (char)i << endl;
 }
