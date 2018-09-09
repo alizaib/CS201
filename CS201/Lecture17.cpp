@@ -1,13 +1,33 @@
 #include "Lecture17.h"
 #include <iostream>
-#include <ctype.h>
+//#include <ctype.h>
+#include <string>
 using namespace std;
 
 void EntryPoint17(){
-	PrintAllAsciiCharacters();
+	Misc();
+	//PrintAllAsciiCharacters();
 	//CountCharAndNumbers();
 }
+void Misc() {
+	/*char a = 'Z';
+	char* ptr = "Ali Zaib";
+	cout << ptr;*/
 
+	/*char* age = "45.22";
+	cout << age << " " << atoi(age) << " " << atof(age);*/
+
+	/*int a = '9' - '0';
+	cout << a << endl << atoi("-4205AliZaib");*/
+
+	/*int a = 3;
+	int* ptr = &a;	
+	cout << &ptr << "\t" << *ptr << "\t" << a << endl;
+	*ptr = 7;
+	cout << &a << "\t" << *ptr << "\t" << a << endl;
+	cout << ptr << "\t" << sizeof(ptr);*/
+	
+}
 void PrintAllAsciiCharacters() {
 	for (int i = 0; i < 256; i++) {
 		if (i == '\n') cout << "Hey got an enter";
@@ -35,3 +55,11 @@ void CountCharAndNumbers() {
 		<< smallLetters << " small letters " << endl
 		<< capitalLetters << " capital letters" << endl;
 }
+int Myatoi(const char* strNumber) {
+	int result = 0;
+
+	bool isNegative = false;
+	
+	return result;
+}
+
