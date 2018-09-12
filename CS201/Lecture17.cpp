@@ -26,6 +26,25 @@ void Misc() {
 	*ptr = 7;
 	cout << &a << "\t" << *ptr << "\t" << a << endl;
 	cout << ptr << "\t" << sizeof(ptr);*/
+
+	/*char* name = "Ali Zaib";
+	cout << *name << endl;
+	name+=4;
+	cout << *name << endl << name;*/
+	cout << sizeof(int);
+	unsigned int num = '7' - '0';
+	unsigned int num2 = '0' - '1';
+	cout << num << "\t" << num2;
+
+	/*char zero = '0';
+	char toCheck = '9';
+	unsigned int difference = toCheck - zero;
+	if (difference > 9)
+		cout << "Not digit";
+	else
+		cout << "digit";
+	*/
+	/*cout << Myatoi("253a5");*/
 	
 }
 void PrintAllAsciiCharacters() {
@@ -57,9 +76,21 @@ void CountCharAndNumbers() {
 }
 int Myatoi(const char* strNumber) {
 	int result = 0;
-
-	bool isNegative = false;
+	int sign = 1;
+	if (*strNumber == '-') {
+		sign = -1;
+		strNumber++;
+	}
+	int currentDigit;
+	do {
+		currentDigit = *strNumber - '0';
+		if (currentDigit > 9) {
+			break;
+		}
+		result = result * 10 + currentDigit;
+		strNumber++;
+	} while (*strNumber != '\0');
 	
-	return result;
+	return result * sign;
 }
 
