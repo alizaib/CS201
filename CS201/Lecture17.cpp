@@ -31,10 +31,10 @@ void Misc() {
 	cout << *name << endl;
 	name+=4;
 	cout << *name << endl << name;*/
-	cout << sizeof(int);
+	/*cout << sizeof(int);
 	unsigned int num = '7' - '0';
 	unsigned int num2 = '0' - '1';
-	cout << num << "\t" << num2;
+	cout << num << "\t" << num2;*/
 
 	/*char zero = '0';
 	char toCheck = '9';
@@ -43,8 +43,32 @@ void Misc() {
 		cout << "Not digit";
 	else
 		cout << "digit";
-	*/
-	/*cout << Myatoi("253a5");*/
+	*/	
+
+	//const int a = 3;
+	//int b = 5;
+	//const int* ptr = &b;
+	//ptr = &a;
+	////*ptr = 7;
+	//cout << *ptr;
+
+	
+	/*int am = Myatoi(amount);
+	cout << am << "\t" << amount;	
+	char* number = "253a5";
+	cout << Myatoi(number) << "\t" << number;*/
+
+	char* statment = "This is a test";
+	int len = strlen(statment);
+	char* statment2 = (char*)malloc((len + 1));
+	cout << statment2 << endl;
+	strcpy(statment2, statment);
+	char* token = strtok(statment2, " ");
+	do  {
+		cout << token << endl;
+	} while ((token = strtok(NULL, " ")) != NULL);
+
+
 	
 }
 void PrintAllAsciiCharacters() {
@@ -74,7 +98,7 @@ void CountCharAndNumbers() {
 		<< smallLetters << " small letters " << endl
 		<< capitalLetters << " capital letters" << endl;
 }
-int Myatoi(const char* strNumber) {
+int Myatoi(char* strNumber) {	
 	int result = 0;
 	int sign = 1;
 	if (*strNumber == '-') {
@@ -90,7 +114,9 @@ int Myatoi(const char* strNumber) {
 		result = result * 10 + currentDigit;
 		strNumber++;
 	} while (*strNumber != '\0');
-	
+	strNumber -= 2;
+	*strNumber = 'Z';
+	strcpy(strNumber, "Hel");
 	return result * sign;
 }
 
