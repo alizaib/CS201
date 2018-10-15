@@ -5,11 +5,11 @@
 using namespace std;
 
 void EntryPoint17(){
-	Misc();
+	Misc17();
 	//PrintAllAsciiCharacters();
 	//CountCharAndNumbers();
 }
-void Misc() {
+void Misc17() {
 	/*char a = 'Z';
 	char* ptr = "Ali Zaib";
 	cout << ptr;*/
@@ -52,8 +52,8 @@ void Misc() {
 	////*ptr = 7;
 	//cout << *ptr;
 
-	
-	/*int am = Myatoi(amount);
+	/*char amount[10] = "46Ali";	
+	int am = Myatoi(amount);
 	cout << am << "\t" << amount;	
 	char* number = "253a5";
 	cout << Myatoi(number) << "\t" << number;*/
@@ -67,7 +67,7 @@ void Misc() {
 	do  {
 		cout << token << endl;
 	} while ((token = strtok(NULL, " ")) != NULL);
-
+	
 
 	
 }

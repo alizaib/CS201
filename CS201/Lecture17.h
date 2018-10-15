@@ -1,7 +1,7 @@
 #pragma once
 void EntryPoint17();
 
-void Misc();
+void Misc17();
 void PrintAllAsciiCharacters();
 void CountCharAndNumbers();
 int Myatoi(char*);
