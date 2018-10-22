@@ -137,6 +137,7 @@
   <ItemGroup>
     <ClCompile Include="Lecture17.cpp" />
     <ClCompile Include="Lecture18.cpp" />
+    <ClCompile Include="Lecture19.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
