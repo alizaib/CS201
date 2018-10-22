@@ -6,11 +6,27 @@
 using namespace std;
 
 void WriteToTextFile();
+void ReadTextFile2();
 
-void EntryPoint18(){
+void EntryPoint18(int argc, char** argv){
+	DisplayCommandLineArgs(argc, argv);
+
 	//Misc18();
-	WriteToTextFile();
+	//WriteToTextFile();
 	//ReadTextFile();
+	//ReadTextFile2();
+}
+
+void DisplayCommandLineArgs(int argc, char** argv)
+{	
+	if (argc < 2) {
+		cout << "no arguments passed\n";
+		cout << *argv; //program name (full path) is treated as 
+	}
+	else {
+		for (int count = 1; count < argc; count++)
+			cout << *(argv + count) << "\t";
+	}
 }
 
 void Misc18() {
@@ -30,6 +46,22 @@ void ReadTextFile() {
 	do {
 		myFile >> name >> salary;
 		cout << name << "\t" << salary << endl;
+	} while (!myFile.eof());
+	myFile.close();
+}
+
+void ReadTextFile2() {
+	ifstream myFile;
+	myFile.open("SalaryInfo1.txt");
+	if (!myFile) {
+		cout << "File cannot be open";
+		return;
+	}
+	char line[100];
+	
+	do {
+		myFile.getline(line, 100);
+		cout << line << endl;
 	} while (!myFile.eof());
 	myFile.close();
 }

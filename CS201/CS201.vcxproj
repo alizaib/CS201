@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="Lecture17.h" />
     <ClInclude Include="Lecture18.h" />
+    <ClInclude Include="Lecture19.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
