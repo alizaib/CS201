@@ -48,13 +48,13 @@ void WriteInFile() {
 }
 
 void CopyFile(int argc, char** argv) {
-	if (argc < 2) {
+	if (argc < 3) {
 		cout << "incorrect syntax. Try cs201.exe source.txt destination.txt";
 		return;
 	}
 	ifstream source(argv[1]);
 	ofstream dest(argv[2]);
-	if (!source && !dest) {		
+	if (!(source && dest)) {		
 		cout << "either source or destination file cannot be open";
 		return;
 	}
