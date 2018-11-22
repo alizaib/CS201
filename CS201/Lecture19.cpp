@@ -8,12 +8,14 @@ void DisplayFileSize(int argc, char** argv);
 void WriteInFile();
 void CopyFile(int argc, char** argv);
 void PlayWithStream();
+void WriteNumbers();
 
 void EntryPoint19(int argc, char** argv) {
 	//DisplayFileSize(argc, argv);
 	//WriteInFile();
 	//CopyFile(argc, argv);
-	PlayWithStream();
+	//PlayWithStream();
+	WriteNumbers();
 }
 
 void DisplayFileSize(int argc, char** argv) {
@@ -48,12 +50,13 @@ void WriteInFile() {
 }
 
 void CopyFile(int argc, char** argv) {
-	if (argc < 3) {
+	/*if (argc < 3) {
 		cout << "incorrect syntax. Try cs201.exe source.txt destination.txt";
 		return;
-	}
-	ifstream source(argv[1]);
-	ofstream dest(argv[2]);
+	}*/
+
+	ifstream source("salaryinfo1.txt"/*argv[1]*/);
+	ofstream dest("copy-salary-info1.txt"/*argv[2]*/);
 	if (!(source && dest)) {		
 		cout << "either source or destination file cannot be open";
 		return;
@@ -63,15 +66,19 @@ void CopyFile(int argc, char** argv) {
 	source.seekg(0, ios::beg); //reset read pointer to the start of file.
 
 	const int MAX_CHARS = 10000;
-	//char* str = (char*)malloc(sizeof(char)*MAX_CHARS);
-	char str[MAX_CHARS];
+	char* str = (char*)malloc(sizeof(char)*MAX_CHARS);
+	//char str[MAX_CHARS];
 	int i = 0;
 	for (; i < sourceSize / MAX_CHARS; i++) {
 		source.read(str, MAX_CHARS);
 		dest.write(str, MAX_CHARS);
 	}
-	source.read(str, sourceSize - (i*MAX_CHARS));
-	dest.write(str, sourceSize - (i*MAX_CHARS));
+	int remainingChars = sourceSize - (i*MAX_CHARS);
+	str = (char*)malloc(sizeof(char)*remainingChars+1);
+	
+	source.read(str, remainingChars);
+	str[remainingChars] = '\0';
+	dest.write(str, remainingChars+1);
 	
 	source.close();
 	dest.close();
@@ -89,4 +96,20 @@ void PlayWithStream() {
 	}
 	inFile.close();
 	scrn.close();
+}
+
+void WriteNumbers() {
+	ofstream file("numbers.txt");
+	for (int i = 0; i < 100; i++)
+		file.write((char*)&i, sizeof(int));
+	file.close();
+
+	ifstream file1("numbers.txt");
+	int j;
+	for (int i = 0; i < 100; i++)
+	{
+		file1.read((char*)&j, sizeof(int));
+		cout << j << endl;
+	}
+	file1.close();
 }

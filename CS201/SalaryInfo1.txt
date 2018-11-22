@@ -1,4 +1,1 @@
-Ali	985
-Zaib	654
-Khan	123
-Yasir	8975
+Hello this is some text file let see how it works under the hood.
