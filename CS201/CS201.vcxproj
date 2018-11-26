@@ -139,6 +139,7 @@
     <ClCompile Include="Lecture18.cpp" />
     <ClCompile Include="Lecture19.cpp" />
     <ClCompile Include="Lecture20.cpp" />
+    <ClCompile Include="Lecture21.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +147,7 @@
     <ClInclude Include="Lecture18.h" />
     <ClInclude Include="Lecture19.h" />
     <ClInclude Include="Lecture20.h" />
+    <ClInclude Include="Lecture21.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

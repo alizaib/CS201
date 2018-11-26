@@ -16,6 +16,10 @@ struct Student
 	Address add;
 };
 
+struct Test {
+	char* name;
+};
+
 void PrintStudentInfo(Student student);
 
 void EntryPoint20(int argc, char** argv) {
@@ -52,13 +56,18 @@ void EntryPoint20(int argc, char** argv) {
 	//PrintStudentInfo(*s1);
 	//cout << (*s1).gpa; //dereference first, to use dot operator.
 
-	int x;
+	/*int x;
 	x = 'a';
 	cout << x << endl;
 	x = x * 256;
 	cout << x << endl;
 	x = x + 'b';
-	cout << x << endl;
+	cout << x << endl;*/
+
+	Test t1;
+	t1.name = "Ali Zaib";
+	cout << sizeof(t1) << endl;
+	cout << sizeof(char) << "\t" << sizeof(char*) << "\t" << sizeof(int) << "\t" << sizeof(int*);
 
 }
 
