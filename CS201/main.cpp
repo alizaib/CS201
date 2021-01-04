@@ -9,11 +9,11 @@ using namespace std;
 
 void main(int argc, char** argv)
 {	
-	//EntryPoint17();
+	EntryPoint17();
 	//EntryPoint18(argc, argv);
 	//EntryPoint19(argc, argv);
 	//EntryPoint20(argc, argv);
-	EntryPoint21(argc, argv);
+	//EntryPoint21(argc, argv);
 	cout << endl;
 	system("pause");
 }

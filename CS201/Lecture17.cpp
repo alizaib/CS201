@@ -4,21 +4,35 @@
 #include <string>
 using namespace std;
 
-void EntryPoint17(){
-	Misc17();
-	//PrintAllAsciiCharacters();
+void EntryPoint17() {
+	//Misc17();
+	//ConsoleOutWithCharPointer();
+	//CharAsInt();
+	PrintAllAsciiCharacters();
 	//CountCharAndNumbers();
 }
-void Misc17() {
-	/*char a = 'Z';
+
+void ConsoleOutWithCharPointer() {
+
+	char* breakWhereNullableStringIs = "Ali\0Zaib";
+	cout << breakWhereNullableStringIs << endl;
+
 	char* ptr = "Ali Zaib";
-	cout << ptr;*/
+	cout << ptr;
+}
+
+void CharAsInt() {
+	int a = '9' - '2';
+	cout << a << endl;
+}
+
+void Misc17() {
+	
 
 	/*char* age = "45.22";
 	cout << age << " " << atoi(age) << " " << atof(age);*/
 
-	/*int a = '9' - '0';
-	cout << a << endl << atoi("-4205AliZaib");*/
+	
 
 	/*int a = 3;
 	int* ptr = &a;	
@@ -62,7 +76,13 @@ void Misc17() {
 	int len = strlen(statment);
 	char* statment2 = (char*)malloc((len + 1));
 	cout << statment2 << endl;
-	strcpy(statment2, statment);
+
+	//Note if you remove the if check, VS gives warning that statement2 could be zero. means mallooc is gaurenteed to return memory.
+	if (statment2 != NULL) {
+		strcpy(statment2, statment);
+	}
+	
+	
 	char* token = strtok(statment2, " ");
 	do  {
 		cout << token << endl;
@@ -71,6 +91,7 @@ void Misc17() {
 
 	
 }
+
 void PrintAllAsciiCharacters() {
 	for (int i = 0; i < 256; i++) {
 		if (i == '\n') cout << "Hey got an enter";
@@ -81,6 +102,7 @@ void PrintAllAsciiCharacters() {
 	}
 		
 }
+
 void CountCharAndNumbers() {
 	cout << "Please enter something and then press enter" << endl;
 	int numbers = 0, smallLetters = 0 , capitalLetters = 0;
@@ -98,6 +120,7 @@ void CountCharAndNumbers() {
 		<< smallLetters << " small letters " << endl
 		<< capitalLetters << " capital letters" << endl;
 }
+
 int Myatoi(char* strNumber) {	
 	int result = 0;
 	int sign = 1;
@@ -113,10 +136,7 @@ int Myatoi(char* strNumber) {
 		}
 		result = result * 10 + currentDigit;
 		strNumber++;
-	} while (*strNumber != '\0');
-	strNumber -= 2;
-	*strNumber = 'Z';
-	strcpy(strNumber, "Hel");
+	} while (*strNumber != '\0');	
 	return result * sign;
 }
 
